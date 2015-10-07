@@ -4,7 +4,7 @@
   "description": "React Boilerplate",
   "main": "server/server.js",
   "scripts": {
-    "start": "webpack --colors --progress --watch"
+    "start": "webpack-dev-server --content-base dist/"
   },
   "author": "Jamie Copeland",
   "license": "MIT",
