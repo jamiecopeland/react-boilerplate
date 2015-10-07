@@ -3,7 +3,11 @@ var webpack = require('webpack');
 var htmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'client', 'src', 'Main.jsx'),
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    path.resolve(__dirname, 'client', 'src', 'Main.jsx')
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
@@ -11,13 +15,13 @@ module.exports = {
   resolve: {
     root: path.resolve(__dirname, 'client', 'src'),
     extensions: ['', '.js', '.jsx', '.scss', '.html'],
-    modulesDirectories: ['node_modules', 'assets', 'client/src'],
+    modulesDirectories: ['node_modules', 'assets', 'client/src']
   },
   module: {
     loaders: [
       {
         test: /\.js|jsx$/,
-        loader: 'babel-loader',
+        loaders: ['react-hot', 'babel',],
         exclude: /node_modules/
       },
       {
