@@ -17,6 +17,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.scss', '.html'],
     modulesDirectories: ['node_modules', 'assets', 'client/src']
   },
+  devtool: 'eval-source-map',
   module: {
     loaders: [
       {

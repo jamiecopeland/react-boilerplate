@@ -1,5 +1,8 @@
 import React from 'react';
+import Router, { Route } from 'react-router';
 
-import Root from 'root/Root';
+import routes from './routes';
 
-React.render(<Root />, document.getElementById('app-dom-hook'));
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.getElementById('app-dom-hook'));
+});

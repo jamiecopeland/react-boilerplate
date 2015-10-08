@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { RouteHandler } from 'react-router';
+
 require('_styles/reset.scss');
 require('_styles/typography.scss');
 require('./Root.scss');
@@ -12,7 +14,10 @@ class Root extends React.Component {
 
   render() {
     return (
-      <div className="Root">Root</div>
+      <div className="Root">
+        <div>Root</div>
+        <RouteHandler/>
+      </div>
     );
   }
 
