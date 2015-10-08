@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('./Preloader.scss');
+require('./AppPreloader.scss');
 
 class Preloader extends React.Component {
 
@@ -17,7 +17,7 @@ class Preloader extends React.Component {
   }
 
   hidePrePreloader(callback) {
-    const prePreloaderElement = document.getElementsByClassName('PrePreloader')[0];
+    const prePreloaderElement = document.getElementsByClassName('Preloader')[0];
     if(prePreloaderElement) {
       prePreloaderElement.parentElement.removeChild(prePreloaderElement);
       callback();
@@ -26,7 +26,7 @@ class Preloader extends React.Component {
 
   render() {
     return (
-      <div className="Preloader"></div>
+      <div className="AppPreloader"></div>
     );
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Router, { Route } from 'react-router';
 
-import Preloader from 'elements/preloader/Preloader';
+import AppPreloader from 'elements/appPreloader/AppPreloader';
 import routes from './routes';
 
 class Main extends React.Component {
@@ -38,7 +38,7 @@ class Main extends React.Component {
     return (
       <div>
         {this.state.routeHandler ? <this.state.routeHandler /> : null}
-        <Preloader
+        <AppPreloader
           isHidden={this.state.appIsReady}
           onHideComplete={this.onPreloaderHideComplete.bind(this)}
         />
