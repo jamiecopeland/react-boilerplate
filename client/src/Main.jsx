@@ -9,11 +9,15 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      appIsReady: false
+    };
   }
 
   componentDidMount() {
-    this.runRouter();
+    this.setState({
+      appIsReady: true
+    });
   }
 
   runRouter() {
@@ -26,11 +30,18 @@ class Main extends React.Component {
     });
   }
 
+  onPreloaderHideComplete() {
+    this.runRouter();
+  }
+
   render() {
     return (
       <div>
         {this.state.routeHandler ? <this.state.routeHandler /> : null}
-        <Preloader />
+        <Preloader
+          isHidden={this.state.appIsReady}
+          onHideComplete={this.onPreloaderHideComplete.bind(this)}
+        />
       </div>
     );
   }

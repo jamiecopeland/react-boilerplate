@@ -2,7 +2,6 @@ import React from 'react';
 
 import { RouteHandler } from 'react-router';
 
-require('_styles/reset.scss');
 require('_styles/typography.scss');
 require('./Root.scss');
 
