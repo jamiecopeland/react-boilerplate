@@ -7,7 +7,6 @@ class ExampleScreen1 extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log('ES1');
   }
 
   render() {
