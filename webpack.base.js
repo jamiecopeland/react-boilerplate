@@ -1,8 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
+var merge = require('webpack-merge');
 var htmlwebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+var base = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
@@ -17,7 +18,6 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.scss', '.html'],
     modulesDirectories: ['node_modules', 'assets', 'client/src']
   },
-  devtool: 'eval-source-map',
   module: {
     loaders: [
       {
@@ -51,3 +51,7 @@ module.exports = {
     new webpack.OldWatchingPlugin()
   ]
 };
+
+module.exports = function(options) {
+  return merge(base, options);
+}
