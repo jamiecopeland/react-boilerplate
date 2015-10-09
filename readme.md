@@ -1,5 +1,5 @@
 # React Boilerplate
-Minimal boilerplate for ES6 React applications using Webpack and Webpack Dev Server.
+Boilerplate for ES6 React applications using Webpack and Webpack Dev Server.
 
 ## Installation
 ```
@@ -11,11 +11,13 @@ npm install
 ## Development
 
 #### Hot loading
-Use Webpack's [hot module replacement](https://webpack.github.io/docs/hot-module-replacement.html) alongside [react hot loader](with https://github.com/gaearon/react-hot-loader) for automagical app updates without a browser refresh.  
+Run the dev server with Webpack's [hot module replacement](https://webpack.github.io/docs/hot-module-replacement.html) and [react hot loader](with https://github.com/gaearon/react-hot-loader) for automagical app updates without a browser refresh everytime you change a file.  
 ```npm run startHot```
 
-#### Page refresh
-Ensure the app updates every time you change you code  
+#### Full refresh
+Run the dev server with app updates via a browser refresh everytime you change a file.  
 ```npm run startRefresh```
 
-## Deployment
+## Production
+Build the application ready for deployment.  
+```npm run build```

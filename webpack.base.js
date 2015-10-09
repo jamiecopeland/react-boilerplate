@@ -4,11 +4,7 @@ var merge = require('webpack-merge');
 var htmlwebpackPlugin = require('html-webpack-plugin');
 
 var base = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    path.resolve(__dirname, 'client', 'src', 'Main.jsx')
-  ],
+  entry: path.resolve(__dirname, 'client', 'src', 'Main.jsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'

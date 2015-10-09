@@ -4,8 +4,9 @@
   "description": "React Boilerplate",
   "main": "server/server.js",
   "scripts": {
-    "startHot": "env UV_THREADPOOL_SIZE=100 NODE_ENV=development webpack-dev-server --hot --inline --progress --colors --port 3000 --host 0.0.0.0  --content-base dist/ --config webpack.development.js",
-    "startRefresh": "env UV_THREADPOOL_SIZE=100 NODE_ENV=development webpack-dev-server --inline --progress --colors --port 3000 --host 0.0.0.0  --content-base dist/ --config webpack.development.js"
+    "build":        "env UV_THREADPOOL_SIZE=100 NODE_ENV=production webpack             --config webpack.production.js  --progress --colors --profile",
+    "startHot":     "env UV_THREADPOOL_SIZE=100 NODE_ENV=development webpack-dev-server --config webpack.development.js --progress --colors --port 3000 --host 0.0.0.0 --content-base dist/  --inline --hot",
+    "startRefresh": "env UV_THREADPOOL_SIZE=100 NODE_ENV=development webpack-dev-server --config webpack.development.js --progress --colors --port 3000 --host 0.0.0.0 --content-base dist/  --inline"
   },
   "author": "Jamie Copeland",
   "license": "MIT",
@@ -26,5 +27,8 @@
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
+  },
+  "devDependencies": {
+    "compression-webpack-plugin": "^0.2.0"
   }
 }
