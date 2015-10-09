@@ -12,13 +12,13 @@ var base = {
   resolve: {
     root: path.resolve(__dirname, 'client', 'src'),
     extensions: ['', '.js', '.jsx', '.scss', '.html'],
-    modulesDirectories: ['node_modules', 'assets', 'client/src']
+    modulesDirectories: ['node_modules', 'assets', 'client/src', 'client/images']
   },
   module: {
     loaders: [
       {
         test: /\.js|jsx$/,
-        loaders: ['react-hot', 'babel',],
+        loaders: ['react-hot', 'babel'],
         exclude: /node_modules/
       },
       {
@@ -27,11 +27,11 @@ var base = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loader: 'url-loader?limit=8192&name=[path][name]--[hash:6].[ext]'
+        loader: 'url-loader?limit=8192&name=assets/[path][name]--[hash:6].[ext]'
       },
       {
         test: /\.(eot|ttf|woff)$/,
-        loader: 'url-loader?limit=10000&name=[path][name]--[hash:6].[ext]'
+        loader: 'url-loader?limit=10000&name=assets/[path][name]--[hash:6].[ext]'
       },
       {
         test: /\.scss$/,
