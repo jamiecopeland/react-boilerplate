@@ -1,7 +1,7 @@
 import React from 'react';
 import Router, { Route } from 'react-router';
 
-import AppPreloader from 'elements/appPreloader/AppPreloader';
+import AppPreloader from 'components/elements/appPreloader/AppPreloader';
 import routes from './routes';
 
 class Main extends React.Component {
