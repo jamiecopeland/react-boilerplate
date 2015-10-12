@@ -1,5 +1,4 @@
 import React from 'react';
-import { RouteHandler } from 'react-router';
 
 require('./ExampleScreen1A.scss');
 

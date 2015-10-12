@@ -2,14 +2,22 @@ import React from 'react';
 
 require('./AppPreloader.scss');
 
-class Preloader extends React.Component {
+class AppPreloader extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.checkIsHidden(this.props.isHidden);
+  }
+
   componentWillUpdate(nextProps) {
-    if(nextProps.isHidden) {
+    this.checkIsHidden(nextProps.isHidden);
+  }
+
+  checkIsHidden(isHidden) {
+    if (isHidden) {
       this.hidePrePreloader(() => {
         this.props.onHideComplete();
       });
@@ -18,7 +26,7 @@ class Preloader extends React.Component {
 
   hidePrePreloader(callback) {
     const prePreloaderElement = document.getElementsByClassName('Preloader')[0];
-    if(prePreloaderElement) {
+    if (prePreloaderElement) {
       prePreloaderElement.parentElement.removeChild(prePreloaderElement);
       callback();
     }
@@ -32,9 +40,9 @@ class Preloader extends React.Component {
 
 }
 
-Preloader.propTypes = {
+AppPreloader.propTypes = {
   isHidden: React.PropTypes.bool,
   onHideComplete: React.PropTypes.func
-}
+};
 
-export default Preloader;
+export default AppPreloader;

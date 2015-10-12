@@ -10,11 +10,9 @@ export default (
   <Route handler={RouteHandler}>
     <Route path="/" handler={Root}>
       <Route path="example-screen-1" handler={ExampleScreen1}>
-        <Route path="example-screen-1a" handler={ExampleScreen1A}>
-        </Route>
+        <Route path="example-screen-1a" handler={ExampleScreen1A} />
       </Route>
-      <Route path="example-screen-2" handler={ExampleScreen2}>
-      </Route>
+      <Route path="example-screen-2" handler={ExampleScreen2} />
     </Route>
   </Route>
 );

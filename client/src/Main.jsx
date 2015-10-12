@@ -1,23 +1,19 @@
 import React from 'react';
-import Router, { Route } from 'react-router';
+import Router from 'react-router';
 
 import AppPreloader from 'components/elements/appPreloader/AppPreloader';
 import routes from './routes';
 
+// NOTE: If the app needs to perform any asynchronous activity pre start up, appIsReady should be set to false in the constructor then flipped to true once the activity is complete.
+// If no preloader is required, remove the preloader from index.html, the AppPreloader react component from the render() method below and call this.runRouter() in componentDidMount()
 class Main extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      appIsReady: false
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
       appIsReady: true
-    });
+    };
   }
 
   runRouter() {
