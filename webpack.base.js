@@ -15,6 +15,13 @@ var base = {
     modulesDirectories: ['node_modules', 'assets', 'client/src', 'client/images']
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js|jsx$/,
+        include: path.resolve(__dirname, 'client', 'src'),
+        loader: 'eslint-loader'
+      }
+    ],
     loaders: [
       {
         test: /\.js|jsx$/,
