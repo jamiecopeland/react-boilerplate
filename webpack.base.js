@@ -7,7 +7,7 @@ var base = {
   entry: path.resolve(__dirname, 'client', 'src', 'Main.jsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main--[hash:6].js'
   },
   resolve: {
     root: path.resolve(__dirname, 'client', 'src'),
